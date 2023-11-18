@@ -52,3 +52,11 @@ const callAPI = (id) => {
     .catch((error) => console.log(error));
 };
 
+searchButton.addEventListener("click", (e) => {
+  if (searchInput.value == "") {
+    alert("Please Enter City Name.");
+  } else {
+    callAPI(API);
+  }
+});
+
