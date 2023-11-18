@@ -67,3 +67,4 @@ searchInput.addEventListener("keypress", (e) => {
   }
 });
 
+searchButton.click();
