@@ -60,3 +60,10 @@ searchButton.addEventListener("click", (e) => {
   }
 });
 
+searchInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    searchButton.click();
+  }
+});
+
