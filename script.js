@@ -35,3 +35,20 @@ const setWeatherDetails = (data) => {
   }
 };
 
+const callAPI = (id) => {
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${id}`
+  )
+    .then((response) => {
+      if (!response.ok) {
+        alert("Check spelling of City and try again or Something Went Wrong!");
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      setWeatherDetails(data);
+    })
+    .catch((error) => console.log(error));
+};
+
